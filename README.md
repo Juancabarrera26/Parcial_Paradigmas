@@ -494,4 +494,3 @@ Calcula las métricas (accuracy, precision, recall, F1). Cada métrica está imp
 
 * Dataset original: Kaggle → [Heart Failure Prediction](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction)
 * Documentación de Smile: [https://haifengl.github.io](https://haifengl.github.io)
-* Documentación oficial de Kotlin: [https://kotlinlang.org](https://kotlinlang.org)
