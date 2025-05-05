@@ -16,7 +16,7 @@ Este dataset contiene información relevante como edad, colesterol, presión art
 
 ---
 
-## ⚙Herramientas y Tecnologías
+## Herramientas y Tecnologías
 
 * **Lenguaje**: Kotlin
 * **Machine Learning**: Smile (Statistical Machine Intelligence and Learning Engine)
