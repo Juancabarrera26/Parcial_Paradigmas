@@ -1,6 +1,6 @@
 # Análisis Predictivo de Enfermedades Cardíacas con Kotlin y Smile
 
-Este proyecto fue desarrollado como parte de una asignatura universitaria de Ciencia de Datos. El objetivo principal es aplicar el ciclo completo de análisis de datos utilizando un dataset real relacionado con enfermedades cardíacas. Todo el desarrollo se realizó en **Kotlin**, con el uso de la biblioteca **Smile** para el modelo de clasificación.
+Este proyecto tiene el objetivo principal de aplicar el ciclo completo de análisis de datos utilizando un dataset real relacionado con enfermedades cardíacas. Todo el desarrollo se realizó en **Kotlin**, con el uso de la biblioteca **Smile** para el modelo de clasificación.
 
 ---
 
