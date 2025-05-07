@@ -668,7 +668,7 @@ Tiene una exactitud general alta (84%).
 
 Es un modelo bien equilibrado y bastante fiable para diagnóstico preliminar.
 
-# Campos de ingresar para la predicción manual
+# 5. Campos de ingresar para la predicción manual
 Cuando ejecutas la opción 5, el programa te pide los siguientes datos:
 
 # 1. Edad (age)
