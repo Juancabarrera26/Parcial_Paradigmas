@@ -553,8 +553,7 @@ En tu código, al llamar a modeloML.entrenar(pacientesLimpios) se realiza intern
 
 ```
 kotlin
-Copiar
-Editar
+
 val tamañoEntrenamiento = (datos.size * 0.8).toInt()
 val entrenamiento = datos.take(tamañoEntrenamiento)
 val prueba = datos.drop(tamañoEntrenamiento)
