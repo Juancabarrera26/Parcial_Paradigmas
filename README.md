@@ -571,3 +571,25 @@ Este tipo de división es estándar y permite medir si el modelo está sobreajus
 Los datos ya están listos para ser usados.
 ```
 Esto no está haciendo una división real en ese momento, sino que simplemente confirma que los datos están limpios y listos para usar. La división en sí ocurre en el paso 3 (cuando entrenas el modelo). El mensaje puede parecer un poco confuso porque no se hace una acción directa aquí, pero sirve para asegurarte de que ya tienes datos válidos en memoria.
+
+# 3. ¿Qué significa “entrenar el modelo”?
+Entrenar un modelo significa que el algoritmo de aprendizaje automático (en tu caso, la regresión logística) analiza los datos de entrenamiento (80% del total) para aprender patrones que permitan predecir si un nuevo paciente tiene o no enfermedad cardíaca.
+
+Concretamente:
+
+Usa los datos de entrada (xTrain) y las etiquetas reales (yTrain) para ajustar los coeficientes del modelo.
+
+Después de entrenarse, el modelo puede hacer predicciones sobre datos no vistos, como el conjunto de prueba o pacientes ingresados manualmente.
+
+# Resultado final
+Después del mensaje de SLF4J, el programa imprime:
+
+```
+nginx
+Modelo entrenado correctamente.
+```
+Eso significa que:
+
+El modelo fue ajustado con éxito usando los datos.
+
+Está listo para hacer predicciones y para que se evalúen sus métricas.
