@@ -593,3 +593,77 @@ Eso significa que:
 El modelo fue ajustado con éxito usando los datos.
 
 Está listo para hacer predicciones y para que se evalúen sus métricas.
+
+¿Qué son las métricas de desempeño?
+Las métricas de desempeño sirven para medir la calidad del modelo al hacer predicciones. Se calculan comparando:
+
+Las predicciones del modelo (yPred).
+
+Los resultados reales del conjunto de prueba (yReal).
+
+Estas métricas indican qué tan preciso, confiable y útil es el modelo para diagnosticar enfermedades cardíacas.
+
+# Análisis de tus métricas:
+matlab
+Copiar
+Editar
+MÉTRICAS DEL MODELO
+Accuracy : 84,24 %
+Precisión: 83,81 %
+Recall   : 88,00 %
+F1 Score : 85,85 %
+Veamos cada una:
+
+# Accuracy (Exactitud): 84,24 %
+Indica cuántas predicciones totales fueron correctas (positivas o negativas).
+
+En tu caso, el modelo acierta el 84% de las veces en general.
+
+Fórmula:
+
+Accuracy
+=
+𝑇
+𝑃
++
+𝑇
+𝑁
+𝑇
+𝑜
+𝑡
+𝑎
+𝑙
+Accuracy= 
+Total
+TP+TN
+​
+ 
+# Precisión (Precision): 83,81 %
+Mide cuántos de los casos predichos como positivos realmente lo eran.
+
+Importa cuando queremos minimizar falsos positivos (diagnosticar enfermedad cuando no la hay).
+
+En medicina, esto es clave para no alarmar a pacientes sanos.
+
+# Recall (Sensibilidad): 88,00 %
+Mide cuántos de los pacientes que realmente tienen la enfermedad fueron detectados por el modelo.
+
+Importa mucho cuando no queremos que se escape ningún enfermo (minimizar falsos negativos).
+
+# F1 Score: 85,85 %
+Es el promedio armónico entre precisión y recall.
+
+Sirve como medida equilibrada si te importan tanto los falsos positivos como los falsos negativos.
+
+Cuanto más alto, mejor balance entre ambos.
+
+# Interpretación médica de tu modelo
+Tu modelo:
+
+Detecta bien a los enfermos (88% recall).
+
+Comete pocos errores en positivos falsos (84% precisión).
+
+Tiene una exactitud general alta (84%).
+
+Es un modelo bien equilibrado y bastante fiable para diagnóstico preliminar.
