@@ -594,7 +594,7 @@ El modelo fue ajustado con éxito usando los datos.
 
 Está listo para hacer predicciones y para que se evalúen sus métricas.
 
-¿Qué son las métricas de desempeño?
+# ¿Qué son las métricas de desempeño?
 Las métricas de desempeño sirven para medir la calidad del modelo al hacer predicciones. Se calculan comparando:
 
 Las predicciones del modelo (yPred).
@@ -603,15 +603,15 @@ Los resultados reales del conjunto de prueba (yReal).
 
 Estas métricas indican qué tan preciso, confiable y útil es el modelo para diagnosticar enfermedades cardíacas.
 
-# Análisis de tus métricas:
+# Análisis de las  métricas:
+```
 matlab
-Copiar
-Editar
 MÉTRICAS DEL MODELO
 Accuracy : 84,24 %
 Precisión: 83,81 %
 Recall   : 88,00 %
 F1 Score : 85,85 %
+```
 Veamos cada una:
 
 # Accuracy (Exactitud): 84,24 %
