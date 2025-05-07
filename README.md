@@ -657,8 +657,8 @@ Sirve como medida equilibrada si te importan tanto los falsos positivos como los
 
 Cuanto más alto, mejor balance entre ambos.
 
-# Interpretación médica de tu modelo
-Tu modelo:
+# Interpretación médica del modelo
+El modelo:
 
 Detecta bien a los enfermos (88% recall).
 
@@ -667,3 +667,112 @@ Comete pocos errores en positivos falsos (84% precisión).
 Tiene una exactitud general alta (84%).
 
 Es un modelo bien equilibrado y bastante fiable para diagnóstico preliminar.
+
+# Campos de ingresar para la predicción manual
+Cuando ejecutas la opción 5, el programa te pide los siguientes datos:
+
+# 1. Edad (age)
+Tipo: Entero (por ejemplo, 45)
+
+Qué es: Edad del paciente en años.
+
+Por qué importa: A mayor edad, mayor riesgo de enfermedad cardíaca.
+
+# 2. Sexo (sex)
+Tipo: 1 para Hombre, 0 para Mujer
+
+Qué es: Sexo biológico del paciente.
+
+Por qué importa: Los hombres tienen un riesgo mayor de enfermedad cardíaca a edades más tempranas.
+
+# 3. Tipo de dolor en el pecho (chestPain)
+Valores posibles:
+
+0 = Angina típica (ATA)
+
+1 = Angina atípica (NAP)
+
+2 = Dolor no anginoso (ASY)
+
+3 = Dolor tipo TA (probablemente más grave)
+
+Qué es: Tipo de dolor que experimenta el paciente.
+
+Por qué importa: Algunos tipos de dolor están más relacionados con enfermedad cardíaca.
+
+# 4. Presión arterial en reposo (restingBP)
+Tipo: Entero (por ejemplo, 120)
+
+Qué es: Presión arterial en milímetros de mercurio cuando el paciente está en reposo.
+
+Por qué importa: La hipertensión es un factor de riesgo.
+
+# 5. Colesterol (cholesterol)
+Tipo: Entero (por ejemplo, 240)
+
+Qué es: Nivel de colesterol en sangre (mg/dL).
+
+Por qué importa: El colesterol alto contribuye a la obstrucción de arterias.
+
+# 6. FastingBS (nivel de azúcar en ayunas)
+Tipo: 1 si el nivel de glucosa en ayunas es > 120 mg/dL, 0 en caso contrario.
+
+Qué es: Glucosa en sangre sin haber comido.
+
+Por qué importa: Altos niveles indican diabetes, que aumenta el riesgo cardíaco.
+
+# 7. RestECG (electrocardiograma en reposo)
+Valores:
+
+0 = Normal
+
+1 = Anormalidad en ST-T
+
+2 = Hipertrofia ventricular izquierda (LVH)
+
+Qué es: Resultado del electrocardiograma mientras el paciente está en reposo.
+
+Por qué importa: Puede mostrar señales de problemas cardíacos.
+
+# 8. Frecuencia cardíaca máxima (maxHR)
+Tipo: Entero (por ejemplo, 160)
+
+Qué es: Ritmo máximo alcanzado durante una prueba de esfuerzo.
+
+Por qué importa: Un corazón sano suele alcanzar una buena frecuencia bajo esfuerzo.
+
+# 9. Angina por ejercicio (exerciseAngina)
+Tipo: 1 = Sí, 0 = No
+
+Qué es: Si el paciente experimenta dolor en el pecho al hacer ejercicio.
+
+Por qué importa: Puede indicar flujo sanguíneo restringido al corazón.
+
+# 10. Oldpeak (nivel de depresión ST)
+Tipo: Número decimal (por ejemplo, 1.4)
+
+Qué es: Diferencia entre el nivel ST en reposo y en esfuerzo (del ECG).
+
+Por qué importa: Valores altos indican problemas en la respuesta del corazón al estrés.
+
+# 11. ST Slope (pendiente del segmento ST)
+Valores:
+
+0 = Ascendente (Up)
+
+1 = Plana (Flat)
+
+2 = Descendente (Down)
+
+Qué es: Forma de la curva ST en el electrocardiograma bajo esfuerzo.
+
+Por qué importa: Cambios pueden indicar isquemia u otros problemas.
+
+# Resultado final
+Después de ingresar esos datos, el modelo devuelve:
+
+"Positivo" → Probablemente tiene enfermedad cardíaca.
+
+"Negativo" → Probablemente no la tiene.
+
+Esto permite usar el modelo como una herramienta de diagnóstico predictivo básico.
