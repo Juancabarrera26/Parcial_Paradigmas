@@ -512,8 +512,8 @@ Filtra registros inválidos, asegurándose de que todas las variables estén cor
 ```
 yaml
 Total de registros: 918, válidos: 918
-Esto te dice dos cosas:
 ```
+Esto te dice dos cosas: 
 
 Total de registros: Se encontraron 918 filas en el archivo heart.csv, lo cual es correcto y coincide con el dataset original de Kaggle llamado Heart Failure Prediction Dataset:
 🔗 https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
@@ -538,3 +538,37 @@ ExerciseAngina	"Y" → 1, "N" → 0
 ST_Slope	"Up" → 0, "Flat" → 1, "Down" → 2
 ```
 Además, se eliminan (filtran) pacientes con valores "-1" (que marcan codificación inválida). Pero en tu caso, ninguno de los 918 registros fue descartado, lo cual es excelente.
+
+# 2. División en Entrenamiento y Prueba (Train/Test Split)
+
+# ¿Qué significa?
+En aprendizaje automático, necesitamos evaluar qué tan bien generaliza un modelo. Para lograrlo, dividimos el dataset original en dos partes:
+
+Conjunto	Uso principal
+Entrenamiento	Usado para entrenar el modelo: es donde el algoritmo "aprende".
+Prueba	Usado para evaluar el modelo con datos no vistos durante el entrenamiento.
+
+# ¿Cómo se divide?
+En tu código, al llamar a modeloML.entrenar(pacientesLimpios) se realiza internamente:
+
+```
+kotlin
+Copiar
+Editar
+val tamañoEntrenamiento = (datos.size * 0.8).toInt()
+val entrenamiento = datos.take(tamañoEntrenamiento)
+val prueba = datos.drop(tamañoEntrenamiento)
+```
+Eso quiere decir:
+
+Se toma el 80% de los pacientes (aproximadamente 734 pacientes) para entrenamiento.
+
+El 20% restante (aproximadamente 184 pacientes) se reserva como conjunto de prueba.
+
+Este tipo de división es estándar y permite medir si el modelo está sobreajustado o si realmente generaliza bien.
+
+# ¿Qué significa el mensaje de salida?
+```nginx
+Los datos ya están listos para ser usados.
+```
+Esto no está haciendo una división real en ese momento, sino que simplemente confirma que los datos están limpios y listos para usar. La división en sí ocurre en el paso 3 (cuando entrenas el modelo). El mensaje puede parecer un poco confuso porque no se hace una acción directa aquí, pero sirve para asegurarte de que ya tienes datos válidos en memoria.
