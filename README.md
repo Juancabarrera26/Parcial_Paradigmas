@@ -494,3 +494,47 @@ Calcula las métricas (accuracy, precision, recall, F1). Cada métrica está imp
 
 * Dataset original: Kaggle → [Heart Failure Prediction](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction)
 * Documentación de Smile: [https://haifengl.github.io](https://haifengl.github.io)
+
+# Explicacion de la salida del proyecto:
+
+# 1. Cargar y Preprocesar Datos
+Cuando eliges la opción 1. Cargar y preprocesar datos, el programa:
+
+Lee el archivo heart.csv desde la carpeta data/.
+
+Omite la primera fila, que corresponde a los nombres de las columnas.
+
+Lee cada línea como un paciente y transforma los datos categóricos en valores numéricos (codificación manual).
+
+Filtra registros inválidos, asegurándose de que todas las variables estén correctamente codificadas.
+
+# ¿Qué significa la salida?
+```
+yaml
+Total de registros: 918, válidos: 918
+Esto te dice dos cosas:
+```
+
+Total de registros: Se encontraron 918 filas en el archivo heart.csv, lo cual es correcto y coincide con el dataset original de Kaggle llamado Heart Failure Prediction Dataset:
+🔗 https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
+
+Válidos: 918: Significa que no hubo registros con datos erróneos o mal codificados, es decir:
+
+Todas las columnas categóricas (Sex, ChestPainType, RestingECG, ST_Slope, etc.) se codificaron correctamente.
+
+No hay valores nulos o no reconocidos.
+
+Por tanto, todos los registros son utilizables para el modelo.
+
+# ¿Qué preprocesamiento se hizo?
+Estas son las transformaciones clave:
+
+Columna original	Transformación realizada
+```
+Sex	"M" → 1, "F" → 0
+ChestPainType	"ATA" → 0, "NAP" → 1, "ASY" → 2, "TA" → 3
+RestingECG	"Normal" → 0, "ST" → 1, "LVH" → 2
+ExerciseAngina	"Y" → 1, "N" → 0
+ST_Slope	"Up" → 0, "Flat" → 1, "Down" → 2
+```
+Además, se eliminan (filtran) pacientes con valores "-1" (que marcan codificación inválida). Pero en tu caso, ninguno de los 918 registros fue descartado, lo cual es excelente.
